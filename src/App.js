@@ -26,7 +26,7 @@ function App() {
 
       <div style={{color:'white'}}> Hello, im Roland, a Fullstack Javascript Developer <br/>
       I made this terminal looking portfolio from scratch for fun using React and a bit of CSS<br/>
-      You can see the github here <a href='https://github.com/rj13371/terminalportfolio'> https://github.com/rj13371/mtg-web-store </a><br/>
+      You can see the github here <a href='https://github.com/rj13371/terminalportfolio'> https://github.com/rj13371/terminalportfolio </a><br/>
       I took inspiration from this website <a href='https://yasfu.net/portfolio/'> https://yasfu.net/portfolio/ </a><br/>
       Contact: mathesonrolanddev@gmail.com <br/>
       User Agent: {window.navigator.userAgent}<br/>
