@@ -26,7 +26,7 @@ function App() {
 
       <div style={{color:'white'}}> Hello, im Roland, a Fullstack Javascript Developer <br/>
       I made this terminal looking portfolio from scratch for fun using React and a bit of CSS<br/>
-      You can see the github here <a href='https://github.com/rj13371/mtg-web-store'> https://github.com/rj13371/mtg-web-store </a><br/>
+      You can see the github here <a href='https://github.com/rj13371/terminalportfolio'> https://github.com/rj13371/mtg-web-store </a><br/>
       I took inspiration from this website <a href='https://yasfu.net/portfolio/'> https://yasfu.net/portfolio/ </a><br/>
       Contact: mathesonrolanddev@gmail.com <br/>
       User Agent: {window.navigator.userAgent}<br/>
@@ -35,7 +35,7 @@ function App() {
       =======================================================================================
       </div>
 
-      <TerminalCommand timeout={50} text={'ls'} output={' skills.txt contact.txt aboutme.txt projects.txt '}/>  
+      <TerminalCommand timeout={50} text={'ls'} output={'rolandHistory.txt skills.txt contact.txt aboutme.txt projects.txt '}/>  
 
 
       <TerminalCommand timeout={3000} text={'cat skills.txt'} output={'Javascript, HTML, CSS, React, NodeJS/Express, Github, Linux CLI'}/>
@@ -50,8 +50,33 @@ function App() {
     </Fragment>
     }/>
 
+<TerminalCommand timeout={12000} text={' history | grep "roland" '} output={
+<Fragment>
+1 touch rolandHistory.txt <br/>
+2 echo rolandHistory.txt <br/>
+3 nano rolandHistory.txt <br/>
+42 history | grep "roland" <br/>
+</Fragment>
+} />
 
-      <TerminalCommand timeout={11000}  lastCommand={true} text={''} output={''}/>
+<TerminalCommand timeout={14000} text={' cat rolandHistory.txt '} output={
+<Fragment>
+Jan 2021 Finish University Degree for Political Science <br/>
+Feb 2021 Look into studying to become a Software Engineer  <br/>
+March 2021 Sign up for Code Chrysalis Foundations Intro to Programming Course <br/>
+May 2021 Finish with basic knowledge of Javascript, HTML and CSS <br/>
+June 2021 Continue studying on my own through Udemy Courses and Youtube, took Colt Steeles Fullstack WebDev Course <br/>
+July 2021 Finish Course and build two projects, a simple React App and a Express App with CRUD and Restful API design <br/>
+August 2021 Start working on a Fullstack React/NodeJS App for a local Card Store in Canada with small team<br/>
+Sept 2021 Enter Ethereum Hackathon to learn about dApp development, win 2nd and 3rd place prize with Team FIN<br/>
+Oct 2021 Finish MVP for E commerce site and continue to learn the MERN stack, also learning Linux CLI which inspired this website! <br/>
+Nov 2021 Currently in several Hackathons and continuing to push to git everyday, started job hunt <br/>
+</Fragment>
+} />
+
+<TerminalCommand timeout={18000} text={'cat contact.txt'} output={' rolandmathesondev@gmail.com https://www.linkedin.com/in/rolandmatheson/ github.com/rj13371 '} />
+
+      <TerminalCommand timeout={19000}  lastCommand={true} text={''} output={''}/>
 
 
     </div>

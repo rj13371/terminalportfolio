@@ -32,7 +32,7 @@ export default function TerminalCommand(props) {
 
   { isTyping?  <Fragment> <div className="terminalHome" > 
   roland@roland-terminal-portfolio:<b style={{color:'powderblue'}}>~/portfolio</b> <b style={{color:'white'}}>$</b> 
-  </div> <div className="terminalText" style={ props.lastCommand? null : {width: '10em'}} > {props.text}  </div> </Fragment> : null }
+  </div> <div className="terminalText" style={ props.lastCommand? null : {width: '15em'}} > {props.text}  </div> </Fragment> : null }
 
 
      { isTyping && !isFinished ? <div className='blinkCmd'> ▮ </div> : null } 
