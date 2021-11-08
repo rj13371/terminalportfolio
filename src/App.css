@@ -1,38 +1,51 @@
 .App {
-  text-align: center;
+  text-align: left;
+  background-color: black;
+  min-height: 120vh;
+  font-family: "Courier";
+  font-size: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.terminal{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: stretch;
+}
+
+input[type=text]{
+  color: white; 
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Courier";
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.terminalHome{
+  color: green; 
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.terminalText{
+  color: white; 
+  white-space: nowrap;
+  overflow: hidden;
+  animation: type 1s steps(60, end); 
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+.blinkCmd {
   color: white;
+  animation: blinker 1s step-start infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }
