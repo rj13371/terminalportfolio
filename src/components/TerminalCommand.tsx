@@ -2,7 +2,15 @@ import React, { useEffect, useState, Fragment } from 'react'
 import '../App.css';
 import TerminalOutput from './TerminalOutput';
 
-export default function TerminalCommand(props) {
+type Props = {
+  readonly timeout: number;
+  readonly text: string;
+  readonly output: React.ReactNode;
+  readonly lastCommand: boolean;
+};
+
+
+ const TerminalCommand: React.FC<Props> = ({timeout, text, output, lastCommand}) => {
 
     const [isTyping, setIsTyping]  = useState(false)
 
@@ -12,14 +20,18 @@ export default function TerminalCommand(props) {
 
         let timerFunc = setTimeout(() => {
             setIsTyping(true);
-          }, props.timeout);
+          }, timeout);
 
-          if (!props.lastCommand) {
+          if (!lastCommand) {
 
-          let boxFunc = setTimeout(() => {
+           setTimeout(() => {
             setIsFinsihed(true);
-          }, props.timeout + 1000);
+          }, timeout + 1000);
         }
+
+        return () => {
+          clearTimeout(timerFunc);
+      }
 
 
     },[])
@@ -32,15 +44,17 @@ export default function TerminalCommand(props) {
 
   { isTyping?  <Fragment> <div className="terminalHome" > 
   roland@roland-terminal-portfolio:<b style={{color:'powderblue'}}>~/portfolio</b> <b style={{color:'white'}}>$</b> 
-  </div> <div className="terminalText" style={ props.lastCommand? null : {width: '15em'}} > {props.text}  </div> </Fragment> : null }
+  </div> <div className="terminalText" style={ lastCommand? {width: '0em'} : {width: '15em'}} > {text}  </div> </Fragment> : null }
 
 
      { isTyping && !isFinished ? <div className='blinkCmd'> ▮ </div> : null } 
 </div>
 
-{ isFinished ?       <TerminalOutput text={props.output} /> 
+{ isFinished ?       <TerminalOutput text={output} /> 
   : null }
 
 </Fragment>
     )
 }
+
+export default TerminalCommand
